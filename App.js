@@ -12,6 +12,7 @@ import DestinationSearchScreen from './src/screens/DestinationSearch';
 
 import HomeScreen from './src/screens/Home';
 import SearchResultsScreen from './src/screens/SearchResults';
+import GuestsScreen from './src/screens/Guests';
 //import Entype from 'react-native-vector-icons/Entypo';
 
 const App: () => React$Node = () => {
@@ -21,7 +22,8 @@ const App: () => React$Node = () => {
       <SafeAreaView>
         {/* <HomeScreen /> */}
         {/* <SearchResultsScreen /> */}
-        <DestinationSearchScreen />
+        {/* <DestinationSearchScreen /> */}
+        <GuestsScreen />
       </SafeAreaView>
     </>
   );
