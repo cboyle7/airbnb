@@ -2,15 +2,14 @@ import React from 'react';
 import {View, Text, Image} from 'react-native';
 import styles from './styles';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-const Post = () => {
+const Post = ({post: {image, area, type, desc, oldPrice, newPrice}}) => {
   return (
     <View style={styles.container}>
       {/* image */}
       <Image
         style={styles.image}
         source={{
-          uri:
-            'https://images.pexels.com/photos/1428348/pexels-photo-1428348.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+          uri: image,
         }}
       />
       <FontAwesome
@@ -35,13 +34,15 @@ const Post = () => {
         </Text>
       </Text>
       {/*  房型 . 地區 */}
-      <Text style={styles.roomType}>整套公寓·中正區</Text>
+      <Text style={styles.roomType}>
+        {type}·{area}
+      </Text>
       {/* 標題 */}
-      <Text style={styles.roomDesc}>台北車站60秒 台北 二人房</Text>
+      <Text style={styles.roomDesc}>{desc}</Text>
       {/* price */}
       <Text style={styles.roomPrice}>
-        <Text style={styles.oldPrice}>$900 </Text>
-        <Text style={styles.newPrice}> $732 </Text>/ 晚
+        <Text style={styles.oldPrice}>${oldPrice} </Text>
+        <Text style={styles.newPrice}> ${newPrice} </Text>/ 晚
       </Text>
     </View>
   );

@@ -7,18 +7,19 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StatusBar} from 'react-native';
+import {FlatList, SafeAreaView, StatusBar} from 'react-native';
 import Post from './src/components/Post';
 import HomeScreen from './src/screens/Home';
-
+import feed from './assets/data/feed';
 //import Entype from 'react-native-vector-icons/Entypo';
+const post1 = feed[0];
 const App: () => React$Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         {/* <HomeScreen /> */}
-        <Post />
+        <Post post={post1} />
       </SafeAreaView>
     </>
   );
