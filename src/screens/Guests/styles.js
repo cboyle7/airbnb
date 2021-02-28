@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   typeAgeRange: {
+    marginTop: 10,
     color: '#444545',
   },
   peopleConsoleContainer: {
@@ -24,6 +25,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     fontSize: 16,
   },
+
   button: {
     borderRadius: 20,
     borderWidth: 1,
@@ -33,9 +35,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  disabledButton: {
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: 'lightgrey',
+    width: 40,
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   buttonMinus: {
     fontSize: 20,
     color: '#474747',
+  },
+  disabledButtonMinus: {
+    fontSize: 20,
+    color: 'lightgrey',
   },
   buttonPlus: {
     fontSize: 20,
