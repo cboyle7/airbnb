@@ -2,13 +2,15 @@ import React from 'react';
 import {View, Text, ImageBackground, Pressable} from 'react-native';
 import styles from './styles';
 import Fontisto from 'react-native-vector-icons/Fontisto';
+import {useNavigation} from '@react-navigation/native'; //轉址用
 const HomeScreen = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       {/* search bar */}
       <Pressable
         style={styles.searchButton}
-        onPress={() => console.warn('object')}>
+        onPress={() => navigation.navigate('Destination Search')}>
         <Fontisto name="search" size={20} color={'#f15454'} />
         <Text style={styles.searchButtonText}>想去哪裡?</Text>
       </Pressable>

@@ -1,6 +1,10 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
+  container: {
+    justifyContent: 'space-between',
+    height: '100%',
+  },
   row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -55,6 +59,20 @@ const styles = StyleSheet.create({
   buttonPlus: {
     fontSize: 20,
     color: '#474747',
+  },
+  submitButton: {
+    marginBottom: 30,
+    backgroundColor: '#f15454',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 50,
+    marginHorizontal: 20,
+    borderRadius: 10,
+  },
+  submitButtonText: {
+    fontSize: 20,
+    color: 'white',
+    fontWeight: 'bold',
   },
 });
 
