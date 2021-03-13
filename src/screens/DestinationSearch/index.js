@@ -21,7 +21,7 @@ const DestinationSearchScreen = () => {
         onPress={(data, details = null) => {
           // 'details' is provided when fetchDetails = true
           console.log(data, details);
-          navigation.navigate('Guest');
+          navigation.navigate('Guests');
         }}
         fetchDetails // 取得地點細節，例如經緯度ㄋ
         query={{
