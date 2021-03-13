@@ -2,9 +2,18 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    // margin: 20,
-    height: 120,
+    marginHorizontal: 5,
+    height: 150,
     padding: 5,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 0.36,
+    shadowRadius: 6.68,
+
+    elevation: 11,
   },
   innerContainer: {
     flexDirection: 'row',
@@ -30,7 +39,7 @@ const styles = StyleSheet.create({
   },
   starCountContainer: {
     // marginVertical: 10,
-    marginTop: 15,
+    marginTop: 5,
   },
 
   commentsCount: {
@@ -38,16 +47,16 @@ const styles = StyleSheet.create({
   },
   roomType: {
     marginVertical: 10,
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: '300',
   },
   roomDesc: {
-    fontSize: 18,
-    marginBottom: 10,
+    fontSize: 15,
+    marginBottom: 5,
     fontWeight: '300',
   },
   roomPrice: {
-    fontSize: 18,
+    fontSize: 13,
     marginBottom: 5,
   },
   oldPrice: {
