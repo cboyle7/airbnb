@@ -1,6 +1,10 @@
 import {StyleSheet, Dimensions} from 'react-native';
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'white',
+    height: Dimensions.get('screen').height,
+  },
   image: {
     width: '100%',
     height: 500,
