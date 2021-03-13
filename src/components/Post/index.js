@@ -1,10 +1,16 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {Text, Image, Pressable} from 'react-native';
 import styles from './styles';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-const Post = ({post: {image, area, type, desc, oldPrice, newPrice}}) => {
+import {useNavigation} from '@react-navigation/native';
+
+const Post = ({post: {id, image, area, type, desc, oldPrice, newPrice}}) => {
+  const navigation = useNavigation();
+  const goToPostPage = () => {
+    navigation.navigate('Post', {postId: id}); // 轉址到  PostScreen 並傳送 Id
+  };
   return (
-    <View style={styles.container}>
+    <Pressable onPress={goToPostPage} style={styles.container}>
       {/* image */}
       <Image
         style={styles.image}
@@ -44,7 +50,7 @@ const Post = ({post: {image, area, type, desc, oldPrice, newPrice}}) => {
         <Text style={styles.oldPrice}>${oldPrice} </Text>
         <Text style={styles.newPrice}> ${newPrice} </Text>/ 晚
       </Text>
-    </View>
+    </Pressable>
   );
 };
 

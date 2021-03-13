@@ -4,7 +4,7 @@ import styles from './styles';
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import places from '../../../assets/data/feed';
 import CustomMarker from '../../components/CustomMarker/index';
-import PostCarouselItem from '../../components/Post/PostCarouselItem';
+import PostCarouselItem from '../../components/PostCarouselItem';
 import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions';
 const SearchResultsMap = () => {
   const [selectedPlaceId, setSelectedPlaceId] = useState(null);
@@ -66,6 +66,7 @@ const SearchResultsMap = () => {
       </MapView>
       <View style={{position: 'absolute', bottom: 30}}>
         <FlatList
+          keyExtractor={(item) => item.id}
           ref={flatlist}
           data={places}
           renderItem={({item}) => <PostCarouselItem post={item} />}

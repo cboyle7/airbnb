@@ -1,14 +1,21 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, Pressable} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import styles from './styles';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions';
 const PostCarouselItem = ({
-  post: {image, area, type, desc, oldPrice, newPrice},
+  post: {id, image, area, type, desc, oldPrice, newPrice},
 }) => {
   const width = useWindowDimensions().width; // 依據機型寬度 做 container寬度的彈性調整
+  const navigation = useNavigation();
+  const goToPostPage = () => {
+    navigation.navigate('Post', {postId: id}); // 轉址到  PostScreen 並傳送 Id
+  };
   return (
-    <View style={[styles.container, {width: width - 60}]}>
+    <Pressable
+      onPress={goToPostPage}
+      style={[styles.container, {width: width - 60}]}>
       {/* image */}
       <View style={styles.innerContainer}>
         <Image
@@ -52,7 +59,7 @@ const PostCarouselItem = ({
           </Text>
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 

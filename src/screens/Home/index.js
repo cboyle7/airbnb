@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, ImageBackground, Pressable} from 'react-native';
+import {View, Text, ImageBackground, Pressable, ScrollView} from 'react-native';
 import styles from './styles';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import {useNavigation} from '@react-navigation/native'; //轉址用
@@ -26,6 +26,9 @@ const HomeScreen = () => {
           <Text style={styles.buttonText}>瀏覽周邊住宿</Text>
         </Pressable>
       </ImageBackground>
+      <ScrollView>
+        <Text>sss</Text>
+      </ScrollView>
     </View>
   );
 };
