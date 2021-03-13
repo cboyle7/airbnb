@@ -1,20 +1,35 @@
-import React from 'react';
-import {View, Text} from 'react-native';
+import React, {useState} from 'react';
+import {View} from 'react-native';
 import styles from './styles';
-import MapView from 'react-native-maps';
-
+import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
+import places from '../../../assets/data/feed';
+import CustomMarker from '../../components/CustomMarker/index';
 const SearchResultsMap = () => {
+  const [selectedPlaceId, setSelectedPlaceId] = useState(null);
   return (
     <View style={styles.container}>
       <MapView
         style={styles.map}
+        provider={PROVIDER_GOOGLE}
         initialRegion={{
-          latitude: 37.78825,
-          longitude: -122.4324,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
-      />
+          latitude: 28.3279822,
+          longitude: -16.5124847,
+          latitudeDelta: 0.8,
+          longitudeDelta: 0.8,
+        }}>
+        {places.map((place) => (
+          <CustomMarker
+            isSelected={place.id === selectedPlaceId}
+            onPress={() =>
+              selectedPlaceId === place.id
+                ? setSelectedPlaceId(null)
+                : setSelectedPlaceId(place.id)
+            }
+            coordinate={place.coordinate}
+            price={place.newPrice}
+          />
+        ))}
+      </MapView>
     </View>
   );
 };
