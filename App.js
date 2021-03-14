@@ -13,6 +13,7 @@ import HomeScreen from './src/screens/Home';
 import SearchResultsScreen from './src/screens/SearchResults';
 import GuestsScreen from './src/screens/Guests';
 //import Entype from 'react-native-vector-icons/Entypo';
+import {withAuthenticator} from 'aws-amplify-react-native';
 
 const App: () => React$Node = () => {
   return (
@@ -23,4 +24,4 @@ const App: () => React$Node = () => {
   );
 };
 
-export default App;
+export default withAuthenticator(App);
